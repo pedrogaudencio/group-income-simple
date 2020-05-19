@@ -41,31 +41,31 @@ export default {
         usersToPay: [
           {
             name: 'Lilia Bouvet',
-            avatar: '/assets/images/default-avatar.png',
+            avatar: '/assets/images/avatar-default.png',
             status: 'todo',
             amount: 10
           },
           {
             name: 'Charlotte Doherty',
-            avatar: '/assets/images/default-avatar.png',
+            avatar: '/assets/images/avatar-default.png',
             status: 'todo',
             amount: 20
           },
           {
             name: 'Kim Kr',
-            avatar: '/assets/images/default-avatar.png',
+            avatar: '/assets/images/avatar-default.png',
             status: 'rejected',
             amount: 25
           },
           {
             name: 'Zoe Kim',
-            avatar: '/assets/images/default-avatar.png',
+            avatar: '/assets/images/avatar-default.png',
             status: 'pending',
             amount: 30
           },
           {
             name: 'Hugo Lil',
-            avatar: '/assets/images/default-avatar.png',
+            avatar: '/assets/images/avatar-default.png',
             status: 'completed',
             amount: 50
           }
