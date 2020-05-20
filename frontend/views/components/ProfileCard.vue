@@ -85,7 +85,7 @@ export default {
     username: String,
     direction: {
       type: String,
-      validator: (value) => ['left', 'top-left'].includes(value),
+      validator: (value) => ['left', 'top-left', 'right'].includes(value),
       default: 'left'
     }
   },
