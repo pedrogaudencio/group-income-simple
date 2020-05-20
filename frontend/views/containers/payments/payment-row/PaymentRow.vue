@@ -4,8 +4,9 @@
       slot(name='cellPrefix')
     td
       .c-user
-        avatar-user.c-avatar(:username='payment.username' size='xs')
-        strong.c-name {{payment.displayName}}
+        profile-card(:username='payment.username' :direction='"right"')
+          avatar-user(:username='payment.username' size='xs' data-test='openMemberProfileCard')
+          strong.c-name {{payment.displayName}}
 
       // TODO: replace condition to indicate whether or not the payment date
       // is < or > than the current date using payment.paymentStatusText
@@ -27,12 +28,14 @@
 
 <script>
 import AvatarUser from '@components/AvatarUser.vue'
+import ProfileCard from '@components/ProfileCard.vue'
 import { humanDate } from '@utils/time.js'
 
 export default {
   name: 'PaymentRowSent',
   components: {
-    AvatarUser
+    AvatarUser,
+    ProfileCard
   },
   props: {
     payment: {
