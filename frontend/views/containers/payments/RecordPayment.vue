@@ -38,6 +38,7 @@ modal-base-template(ref='modal' :fullscreen='true' class='has-background' v-if='
             i18n.sr-only.label Leave a message
             textarea.textarea.c-comment(
               rows='4'
+              v-model='form.memo'
             )
 
         .buttons.c-buttons
@@ -88,7 +89,9 @@ export default {
   data () {
     return {
       displayComment: false,
-      form: {},
+      form: {
+        memo: null
+      },
       donePayment: false,
       ephemeral: {
         payments: this.paymentsList
@@ -141,6 +144,7 @@ export default {
             const paymentInfo = {
               toUser: payment.username,
               amount: +payment.amount,
+              memo: this.form.memo,
               currencyFromTo: ['USD', groupCurrency], // TODO: this!
               exchangeRate: 1,
               txid: '' + Math.random(),

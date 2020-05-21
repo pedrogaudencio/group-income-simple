@@ -265,6 +265,7 @@ export default {
                 username: toUser,
                 displayName: this.userDisplayName(toUser),
                 date: meta.createdDate,
+                memo: data.memo,
                 amount: data.amount // TODO: properly display and convert in the correct currency using data.currencyFromTo and data.exchangeRate
               }
               if (this.filterPayment(payment)) {
