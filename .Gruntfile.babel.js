@@ -157,7 +157,31 @@ module.exports = (grunt) => {
         }
       },
       dev: {}
+    },
+
+    pwa: {
+      name: 'Group Income Simple',
+      themeColor: '#4DBA87',
+      msTileColor: '#000000',
+      appleMobileWebAppCapable: 'yes',
+      appleMobileWebAppStatusBarStyle: 'black',
+      iconPaths: {
+        favicon32: './frontend/assets/images/icons/favicon-32x32.png',
+        favicon16: './frontend/assets/images/icons/favicon-16x16.png',
+        appleTouchIcon: './frontend/assets/images/icons/apple-touch-icon-152x152.png',
+        maskIcon: './frontend/assets/images/icons/safari-pinned-tab.svg',
+        msTileImage: './frontend/assets/images/icons/msapplication-icon-144x144.png'
+      },
+
+      workboxPluginMode: 'injectManifest',
+      workboxOptions: {
+        swSrc: 'frontend/registerServiceWorker.js',
+        swDest: 'service-worker.js',
+        globDirectory: `${distDir}`,
+        globPatterns: ['**/*.{html,json,js,css,png,jpg,svg,gif}']
+      }
     }
+
     // see also:
     // https://github.com/lud2k/grunt-serve
     // https://medium.com/@dan_abramov/the-death-of-react-hot-loader-765fa791d7c4
